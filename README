@@ -1,0 +1,13 @@
+Ruby Wrapper for Bands in Town API
+
+More information: http://www.bandsintown.com/api/overview
+
+TO DO LIST
+- Provide support to XML format
+- Normalize names with whitespace
+- Implement 'venue' in event class
+- Create stubs for api calls
+- Implement support to creation/cancelation  methods
+- Implement support to search  methods
+- Implement support to recommendation  methods
+- Fully implement the api methods
