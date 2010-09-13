@@ -9,16 +9,18 @@ describe "Artist" do
     @artist = BandsInTown::Artist.new('Pete%20Rock')
   end
   
-  subject { @artist.get_method }
-  context "Get API method" do
-    it { should_not be_nil }
-    it { should == GET_CALL }
+  subject do @artist.get_method 
+    context "Get API method" do
+      it { should_not be_nil }
+      it { should == GET_CALL }
+    end
   end
   
-  subject{ @artist.events_method }
-  context "Events API method" do
-    it { should_not be_nil }
-    it { should == EVENTS_CALL }
+  subject do @artist.events_method 
+    context "Events API method" do
+      it { should_not be_nil }
+      it { should == EVENTS_CALL }
+    end
   end
   
 end
