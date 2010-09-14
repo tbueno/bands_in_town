@@ -1,12 +1,12 @@
 require "#{File.dirname(__FILE__)}/spec_helper"
 
-describe "Artist" do
+describe "Artists" do
   
   GET_CALL = "http://api.bandsintown.com/artists/Pete%20Rock.json"
   EVENTS_CALL = "http://api.bandsintown.com/artists/Pete%20Rock/events.json"
-  
+   
   before do
-    @artist = BandsInTown::Artist.new('Pete%20Rock')
+    @artist = BandsInTown::Artists::Artist.new('Pete%20Rock')
   end
   
   subject do @artist.get_method 
