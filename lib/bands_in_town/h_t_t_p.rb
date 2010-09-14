@@ -3,8 +3,8 @@ module BandsInTown
     include HTTParty
      format :json
     
-    def self.call(method, params = {})
-      get(method, :query => params)
+    def self.call(method, args = {})
+      get(method, args)
     end
   end
 end

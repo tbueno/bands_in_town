@@ -37,7 +37,6 @@ module BandsInTown
     
     def self.parse_artists(response)
       artists = []
-      
       response['artists'].each do |artist|
         name = artist['name']
         url = artist['url']
