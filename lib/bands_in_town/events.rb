@@ -3,6 +3,7 @@ module BandsInTown
     RELATIVE_URL = 'events/'
     
     require "events/event"
+    require "events/venue"
     
     def self.search(args = {})
       response = HTTP.call(search_method+parse_params(args))
@@ -10,7 +11,7 @@ module BandsInTown
       response.each do |r|
        
         artists = parse_artists(r)
-        venue = nil
+        venue = parse_venue(r)
         require "debug"
         events << Event.new(
                     r['id'], 
@@ -28,6 +29,12 @@ module BandsInTown
     end
     
     private
+    
+    def self.parse_venue(response)
+      v  = response['venue']
+      venue = Venue.new(v['venue_id'], v['url'], v['region'], v['city'], v['name'], v['country'],
+                        v['latitude'], v['longitude'])
+    end
     
     def self.parse_artists(response)
       artists = []
