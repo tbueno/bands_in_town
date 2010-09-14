@@ -12,7 +12,6 @@ module BandsInTown
        
         artists = parse_artists(r)
         venue = parse_venue(r)
-        require "debug"
         events << Event.new(
                     r['id'], 
                     r['url'],
@@ -38,6 +37,7 @@ module BandsInTown
     
     def self.parse_artists(response)
       artists = []
+      require "debug"
       response['artists'].each do |artist|
         name = artist['name']
         url = artist['url']
